@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Mummy 🎂</title>
+  <meta name="description" content="A cute, interactive birthday website filled with surprises, memories, and love." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f0b18;
+      --accent:#ff6fa3;
+      --accent-2:#ffd166;
+      --text:#fff7fb;
+      --card:#1a1328;
+      --muted:#b7a9c9;
+      --success:#6ee7b7;
+      --danger:#ff8da1;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--text); background:radial-gradient(1200px 800px at 70% -10%, #251a3f 0%, #120c1f 50%, var(--bg) 100%) fixed; font-family:Poppins, system-ui; overflow-x:hidden;
+    }
+    a{color:var(--accent)}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    header{position:sticky; top:0; z-index:20; backdrop-filter: blur(10px); background:rgba(16,12,24,.55); border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{display:flex; align-items:center; justify-content:space-between}
+    .brand{font-family:Pacifico, cursive; font-size:24px; letter-spacing:.5px}
+    .navlinks a{margin-left:16px; text-decoration:none; font-weight:600; opacity:.9}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:16px; background:linear-gradient(135deg, var(--accent), #ff9cc0); color:#181024; font-weight:800; border:none; cursor:pointer; transform:translateZ(0); transition:filter .2s, transform .1s}
+    .btn:hover{filter:brightness(1.05)}
+    .btn:active{transform:scale(.98)}
+    .btn-ghost{background:rgba(255,255,255,.08); color:var(--text); border:1px solid rgba(255,255,255,.08)}
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; padding:48px 0; align-items:center}
+    .hero h1{font-size:clamp(36px, 6vw, 64px); margin:.2em 0 .25em; line-height:1.05}
+    .subtitle{color:var(--muted)}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:24px; box-shadow:0 15px 40px rgba(0,0,0,.35)}
+    .card-inner{padding:20px}
+    .countdown{display:flex; gap:14px; margin-top:16px; flex-wrap:wrap}
+    .cd-item{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:12px 14px; text-align:center; min-width:88px}
+    .cd-item .num{font-size:28px; font-weight:900}
+    .cd-item .lbl{font-size:12px; color:var(--muted); margin-top:4px}
+    section{margin:42px 0}
+    h2{font-size: clamp(26px, 3.5vw, 36px); margin:8px 0 14px}
+    .gift{display:grid; place-items:center; padding:24px}
+    .gift-box{width:210px; height:210px; position:relative; cursor:pointer; transform-style:preserve-3d}
+    .gift-base, .gift-lid{position:absolute; inset:0; border-radius:20px}
+    .gift-base{background:repeating-linear-gradient(90deg, #ff6fa3 0 24px, #ff8fb6 24px 48px); border:2px solid rgba(255,255,255,.4)}
+    .gift-lid{height:70px; top:-70px; background:linear-gradient(0deg, #ffd166, #ffe8a3); border:2px solid rgba(255,255,255,.6); border-bottom:none; border-radius:20px 20px 8px 8px; transform-origin:bottom; transition:transform .5s ease}
+    .ribbon{position:absolute; inset:0; background:linear-gradient(90deg, rgba(255,255,255,.5) 0 10px, transparent 10px 200px); mix-blend:soft-light; border-radius:20px}
+    .bow{position:absolute; top:-95px; left:50%; transform:translateX(-50%); width:140px; height:70px}
+    .bow::before,.bow::after{content:""; position:absolute; width:70px; height:70px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff5, #ff8fb6 40%, #ff6fa3)}
+    .bow::before{left:0}
+    .bow::after{right:0}
+    .gift-box.open .gift-lid{transform:rotateX(65deg)}
+    .surprises{margin-top:20px; display:none}
+    .gift-box.open + .surprises{display:grid; gap:14px}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08)}
+    footer{color:var(--muted); text-align:center; padding:26px 12px}
+    .tiny{font-size:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">💖 For Mummy</div>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="pill">🎂 Happiest Birthday</p>
+        <h1>Happy Birthday, Mummy!</h1>
+        <p class="subtitle">Mom, you are the heart of our home, the smile of our mornings, and the warmth of every hug. This is a small surprise website just for you ❤️</p>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="gift">
+            <div class="gift-box open">
+              <div class="gift-base"></div>
+              <div class="gift-lid"></div>
+              <div class="ribbon"></div>
+              <div class="bow"></div>
+            </div>
+            <div class="surprises" style="display:grid; gap:14px">
+              <div class="pill">💌 A letter: <span>Thank you for being the most loving mom. We love you endlessly!</span></div>
+              <div class="pill">🎵 Song: <a href="https://www.youtube.com/watch?v=_z-1fTlSDF0&list=RD_z-1fTlSDF0&start_radio=1" target="_blank">Listen</a></div>
+              <div class="pill">🌸 Coupon: Aaj raat ko mere taraf se Party! 💕</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p class="tiny">Made with ❤️ for Mom by Your Loving Shree</p>
+    </div>
+  </footer>
+</body>
+</html>
